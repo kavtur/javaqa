@@ -19,10 +19,13 @@ public class Runner {
         B b1 = (B) a;
         ((B) a).m1();
 
+        b.met();
+
     }
 }
 
 class A {
+
     private int i;
     private int j;
     private int k;
@@ -30,10 +33,16 @@ class A {
     public void m(int i, int j) {
 
     }
+
+    public void met() throws RuntimeException {
+
+    }
+
 }
 
 //"is a A"
 class B extends A {
+
     private int k;
     private int i;
     private int j;
@@ -42,5 +51,9 @@ class B extends A {
         B b = this;
         this.m(1, 2);
         System.out.println(k);
+    }
+
+    public void met() throws RuntimeException {
+
     }
 }
